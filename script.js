@@ -1,30 +1,26 @@
-function wallet (startBalance) {
-    balance = startBalance;
-
+function Stepper(name) {
+    this.name = name
+    let stepCounter = 0;
 
     return {
 
-        add(amount) {
-            balance += amount
-            console.log(balance)
+        walk(amount) {
+            stepCounter += amount
+            console.log(name, stepCounter)
         },
 
-        decrease(amount) {
-            balance -= amount
-            console.log(balance)
-        },
 
-        getBalance() {
-            console.log(balance)
+        getSteps() {
+            console.log(name, stepCounter)
         }
 
 
     }
-
 }
 
-const MyWallet = wallet(100)
-MyWallet.add(20)
-MyWallet.decrease(100)
-MyWallet.getBalance()
-console.log(MyWallet.balance)
+
+const User = new Stepper('Danik')
+
+User.walk(1589127589)
+User.walk(1)
+User.getSteps()
