@@ -1,26 +1,43 @@
-function Stepper(name) {
-    this.name = name
-    let stepCounter = 0;
+function phoneBattery() {
+    let charge = 100
 
+ 
     return {
 
-        walk(amount) {
-            stepCounter += amount
-            console.log(name, stepCounter)
+        use(percent) {       
+            charge -= percent;
+
+            if (charge < 0) {
+                console.log('Error')
+                charge += percent
+            }
+
+
         },
 
 
-        getSteps() {
-            console.log(name, stepCounter)
+        chargeUp(percent) {
+            charge += percent;
+            if (charge > 100) {
+                console.log('Error')
+                charge -= percent
+            }
+        },
+        
+        
+        status() {
+            console.log(charge)
         }
 
 
+
+
     }
+
 }
 
 
-const User = new Stepper('Danik')
+const iPhone = phoneBattery()
 
-User.walk(1589127589)
-User.walk(1)
-User.getSteps()
+iPhone.use(500)
+iPhone.status()
