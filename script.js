@@ -1,43 +1,51 @@
-function phoneBattery() {
-    let charge = 100
+function createSafe(password) {
 
- 
-    return {
+    let money = 0;
 
-        use(percent) {       
-            charge -= percent;
-
-            if (charge < 0) {
-                console.log('Error')
-                charge += percent
-            }
-
-
-        },
-
-
-        chargeUp(percent) {
-            charge += percent;
-            if (charge > 100) {
-                console.log('Error')
-                charge -= percent
-            }
-        },
         
-        
-        status() {
-            console.log(charge)
+        return {
+
+            deposit(amount, pass) {
+                if (pass === password) {
+                money += amount
+                console.log(money)
+                } else {
+                    console.log("Access denied")
+                }
+            },
+
+
+            withdraw(amount, pass) {
+                if (pass === password) {
+                money -= amount
+                console.log(money)
+                } else {
+                    console.log("Access denied")
+                }
+            },
+
+
+            checkBalance(pass) {
+                if (pass === password){
+                console.log(money)
+            } else {
+                console.log('Access denied')
+            }
+            }
         }
 
-
-
-
-    }
 
 }
 
 
-const iPhone = phoneBattery()
+let mySafe = createSafe(123)
+mySafe.deposit(52, 123)
+mySafe.deposit(52, 1234)
 
-iPhone.use(500)
-iPhone.status()
+mySafe.withdraw(2,123)
+mySafe.withdraw(2,124)
+
+mySafe.checkBalance(123)
+mySafe.checkBalance(1234)
+
+console.log(mySafe.money)
