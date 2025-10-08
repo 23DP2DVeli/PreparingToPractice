@@ -1,51 +1,31 @@
-function createSafe(password) {
-
-    let money = 0;
-
-        
-        return {
-
-            deposit(amount, pass) {
-                if (pass === password) {
-                money += amount
-                console.log(money)
-                } else {
-                    console.log("Access denied")
-                }
-            },
+function wallet (startBalance) {
+    balance = startBalance;
 
 
-            withdraw(amount, pass) {
-                if (pass === password) {
-                money -= amount
-                console.log(money)
-                } else {
-                    console.log("Access denied")
-                }
-            },
+    return {
 
+        add(amount) {
+            balance += amount
+            console.log(balance)
+        },
 
-            checkBalance(pass) {
-                if (pass === password){
-                console.log(money)
-            } else {
-                console.log('Access denied')
-            }
-            }
+        decrease(amount) {
+            balance -= amount
+            console.log(balance)
+        },
+
+        getBalance() {
+            console.log(balance)
         }
 
 
+    }
+
 }
 
-
-let mySafe = createSafe(123)
-mySafe.deposit(52, 123)
-mySafe.deposit(52, 1234)
-
-mySafe.withdraw(2,123)
-mySafe.withdraw(2,124)
-
-mySafe.checkBalance(123)
-mySafe.checkBalance(1234)
-
-console.log(mySafe.money)
+const MyWallet = wallet(100)
+MyWallet.add(20)
+MyWallet.decrease(100)
+MyWallet.getBalance()
+console.log(MyWallet.balance)
+console.log(wallet.balance)

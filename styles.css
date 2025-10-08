@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(112, 112, 226);
+}
+
+
+#container {
+  width: 20%;
+  max-width: 500px;
+  margin: 0 auto; 
+  padding: 20px;
+  align-items: center;
+  margin-top: 200px;
+  border: 2px solid black;
+  border-radius: 10px;
+  transform: scale(1.0);
+  transition: transform 0.3s ease, background-color 0.4s ease, color 0.4s ease;;
+  background-color: rgb(173, 172, 172);
+  transform: scale(1);
+}
+
+img {
+  display: block;      /* превращаем картинку в блочный элемент */
+  max-width: 100%;     /* подгоняем под ширину контейнера */
+  margin: 0 auto;      /* центрируем */
+  padding: 20px;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    display: block;
+    max-width: 100%;     /* подгоняем под ширину контейнера */
+    margin: 0 auto;      /* центрируем */
+    padding: 10px;
+    border-radius: 15px;
+    transform: scale(1.0);
+    transition: transform 0.3s ease;
+    opacity: 80%;
+    background-color: rgb(194, 138, 247);
+}
+
+#container:hover {
+    transform: scale(1.05);
+    background-color: white;
+    
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: rgb(186, 123, 245);
+    opacity: 100%;
+    
+}
