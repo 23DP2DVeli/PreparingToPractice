@@ -1,11 +1,6 @@
-console.log("1");
+console.log("start");
 
-async function test() {
-  console.log("2");
-  await Promise.resolve();
-  console.log("3");
-}
+setTimeout(() => console.log("task"), 0); // macrotask
+Promise.resolve().then(() => console.log("micro")); // microtask
 
-test();
-
-console.log("4");
+console.log("end");
