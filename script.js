@@ -1,31 +1,11 @@
-function wallet (startBalance) {
-    balance = startBalance;
+console.log("A");
 
+setTimeout(() => {
+  console.log("B");
+}, 0);
 
-    return {
+Promise.resolve().then(() => {
+  console.log("C");
+});
 
-        add(amount) {
-            balance += amount
-            console.log(balance)
-        },
-
-        decrease(amount) {
-            balance -= amount
-            console.log(balance)
-        },
-
-        getBalance() {
-            console.log(balance)
-        }
-
-
-    }
-
-}
-
-const MyWallet = wallet(100)
-MyWallet.add(20)
-MyWallet.decrease(100)
-MyWallet.getBalance()
-console.log(MyWallet.balance)
-console.log(wallet.balance)
+console.log("D");
