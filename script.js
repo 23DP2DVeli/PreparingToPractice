@@ -1,11 +1,11 @@
-console.log("A");
+console.log("1");
 
-setTimeout(() => {
-  console.log("B");
-}, 0);
+async function test() {
+  console.log("2");
+  await Promise.resolve();
+  console.log("3");
+}
 
-Promise.resolve().then(() => {
-  console.log("C");
-});
+test();
 
-console.log("D");
+console.log("4");
