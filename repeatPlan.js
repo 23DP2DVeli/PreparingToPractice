@@ -1,14 +1,9 @@
-let a = 10
-
-function foo() {
-  console.log(a)
+const user = {
+  name: 'Jeffrey',
+  age: 30,
 }
 
-function bar() {
-  let a = 5
-  foo()
-}
+const {name, age} = user
 
-bar()
 
-// 10
+console.log(name, age)
