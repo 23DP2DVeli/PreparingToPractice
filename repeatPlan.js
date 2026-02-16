@@ -1,13 +1,14 @@
 let a = 10
 
 function foo() {
-  let a = 5
-  function bar() {
-    console.log(a)
-  }
-  bar()
+  console.log(a)
 }
 
-foo()
+function bar() {
+  let a = 5
+  foo()
+}
 
-// 5
+bar()
+
+// 10
