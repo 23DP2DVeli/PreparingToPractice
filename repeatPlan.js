@@ -1,3 +1,13 @@
-console.log(typeof null)
-console.log(typeof undefined)
-console.log(typeof NaN)
+function test() {
+  console.log(a)
+  var a = 5
+}
+
+test()
+
+function test() {
+  var a;       // <-- hoisting
+  console.log(a)
+  a = 5
+}
+
