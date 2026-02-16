@@ -1,13 +1,13 @@
-function test() {
-  console.log(a)
-  var a = 5
+let a = 10
+
+function foo() {
+  let a = 5
+  function bar() {
+    console.log(a)
+  }
+  bar()
 }
 
-test()
+foo()
 
-function test() {
-  var a;       // <-- hoisting
-  console.log(a)
-  a = 5
-}
-
+// 5
