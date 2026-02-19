@@ -33,12 +33,12 @@ function updateUser(person) {
 
   draftPerson.age += 1
 
-  return draftPerson
+  return console.log(draftPerson)
 }
 
-const newUser = updateUser(user)
-
-
 console.log(user)
-console.log(newUser)
+
+updateUser(user)
+console.log(user)
+updateUser(user)
 
