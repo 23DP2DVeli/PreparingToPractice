@@ -29,7 +29,7 @@ const arr = [1, 2, 3, 4, 5]
 
 function updateUser(person) {
 
-  const draftPerson = {...person}
+  const draftPerson = JSON.parse(JSON.stringify(person))
 
   draftPerson.age += 1
 
@@ -41,4 +41,5 @@ console.log(user)
 updateUser(user)
 console.log(user)
 updateUser(user)
+
 
