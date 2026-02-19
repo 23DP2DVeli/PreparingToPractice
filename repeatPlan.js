@@ -19,14 +19,16 @@ const user = {
 
 
 function changeCity(user, newCity) {
-  const tempUser = JSON.parse(JSON.stringify(user))
-
-  tempUser.address.city = newCity
-
-  console.log(tempUser.address.city)
+  return {
+    ...user,
+    address: {
+      ...user.address,
+      city: newCity
+    }
+  }
 }
-console.log(user.address.city)
 
-changeCity(user, 'temp')
+const updated = changeCity(user, 'Jurmala')
 
-console.log(user.address.city)
+console.log(updated.address.city) 
+console.log(user.address.city)    
