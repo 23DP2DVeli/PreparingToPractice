@@ -1,34 +1,40 @@
-const user = {
-  name: 'Danik',
-  age: 19,
-  address: {
-    city: 'Riga',
-    street: 'Brivibas'
+const cart = [
+  { id: 1, 
+    name: 'Phone', 
+    price: 300, 
+    count: 1 },
+  { id: 2, name: 'Case', price: 20, count: 2 },
+  { id: 3, name: 'Charger', price: 25, count: 1 }
+]
+
+
+
+
+function getCartTotal(cart) {
+  let countTotal = 0
+  
+  for (let i = 0; i < cart.length; i++) {
+    countTotal += (cart[i].count * cart[i].price)
+  
   }
+  
+  console.log(countTotal)
+
 }
 
 
-// Требования:
-// вернуть новый объект
-// изменить только city
-// оригинал нельзя менять
-// address тоже должен быть новой ссылкой (вот тут многие ошибаются)
-// 👉 после выполнения:
-// const updated = changeCity(user, 'Jurmala')
-// user.address.city должен остаться "Riga"
 
 
-function changeCity(user, newCity) {
-  return {
-    ...user,
-    address: {
-      ...user.address,
-      city: newCity
-    }
-  }
+function increaseCount(cart, productId) {
+  const newArr = cart.map(item => ({ ...item }))
+
+  const obj = newArr.find(obj => obj.id === productId)
+
+  obj.count += 1
+
+  console.log(newArr)
 }
 
-const updated = changeCity(user, 'Jurmala')
 
-console.log(updated.address.city) 
-console.log(user.address.city)    
+
+increaseCount(cart, 3)
