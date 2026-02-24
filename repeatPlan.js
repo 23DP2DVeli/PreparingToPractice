@@ -1,25 +1,23 @@
-const test = [9,8,6,6,5]
-
+const test = [9, 8, 6, 6, 5];
 
 function bubbleSort(arr) {
-
-
+  const n = arr.length;
   
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < n; i++) {
+    let swapped = false; 
+
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        swapped = true;
+      }
+    }
 
 
-    for (let j = 0; j < arr.length; j++) {
-
-      if (arr[j] > arr[j+1]) {
-
-      [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
-    } 
-    }    
+    if (!swapped) break;
   }
 
-  console.log(arr)
-
+  console.log(arr);
 }
 
-
-bubbleSort(test)
+bubbleSort(test);
