@@ -1,40 +1,25 @@
-const cart = [
-  { id: 1, 
-    name: 'Phone', 
-    price: 300, 
-    count: 1 },
-  { id: 2, name: 'Case', price: 20, count: 2 },
-  { id: 3, name: 'Charger', price: 25, count: 1 }
-]
+const test = [9,8,6,6,5]
 
 
+function bubbleSort(arr) {
 
 
-function getCartTotal(cart) {
-  let countTotal = 0
   
-  for (let i = 0; i < cart.length; i++) {
-    countTotal += (cart[i].count * cart[i].price)
-  
+  for (let i = 0; i < arr.length; i++) {
+
+
+    for (let j = 0; j < arr.length; j++) {
+
+      if (arr[j] > arr[j+1]) {
+
+      [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+    } 
+    }    
   }
-  
-  console.log(countTotal)
+
+  console.log(arr)
 
 }
 
 
-
-
-function increaseCount(cart, productId) {
-  const newArr = cart.map(item => ({ ...item }))
-
-  const obj = newArr.find(obj => obj.id === productId)
-
-  obj.count += 1
-
-  console.log(newArr)
-}
-
-
-
-increaseCount(cart, 3)
+bubbleSort(test)
